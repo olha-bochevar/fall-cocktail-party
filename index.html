@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blackout (Un)Friendly Party</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body class="home">
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Blackout<br>(Un)Friendly<br>Party</h1>
+      <p>Cozy cocktail night • Kyiv, Ukraine</p>
+      
+      <div class="buttons">
+        <a href="cocktails.html" class="btn">All Cocktails</a>
+        <a href="#" id="randomBtn" class="btn">Random Cocktail</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('randomBtn').addEventListener('click', e => {
+      e.preventDefault();
+      const cocktails = ['forest-whisper','pumpkin-manhattan','pumpkin-milk-punch','creamy-pumpkin-cordial','autumn-orchard-tea','spiced-rum-old-fashioned','caramel-apple-mule','apple-cider-margarita'];
+      const random = cocktails[Math.floor(Math.random() * cocktails.length)];
+      window.location.href = `cocktails.html#${random}`;
+    });
+  </script>
+</body>
+</html>

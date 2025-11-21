@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocktails • Blackout Party</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body class="cocktails-page">
+
+  <a href="index.html" class="btn-back">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+      <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </a>
+
+  <div class="container">
+    <header class="header">
+      <h1>Signature Cocktails</h1>
+    </header>
+
+    <div class="cocktail-list">
+      <div class="cocktail" id="forest-whisper">
+        <h3>Forest Whisper</h3>
+        <p class="taste">Herbal • Mysterious • Velvet</p>
+        <div class="ingredients">
+          30 ml herbal liqueur<br>
+          20 ml sweet red vermouth<br>
+          10 ml maraschino liqueur<br>
+          1–2 dashes Angostura
+        </div>
+      </div>
+
+      <div class="cocktail" id="pumpkin-manhattan">
+        <h3>Pumpkin Manhattan</h3>
+        <p class="taste">Spicy • Cozy • Classic with a twist</p>
+        <div class="ingredients">
+          40 ml whiskey<br>
+          20 ml sweet red vermouth<br>
+          10 ml pumpkin syrup
+        </div>
+      </div>
+
+      <div class="cocktail" id="pumpkin-milk-punch">
+        <h3>Pumpkin Milk Punch</h3>
+        <p class="taste">Creamy • Pumpkin pie • Hug in a glass</p>
+        <div class="ingredients">
+          40 ml whiskey or tequila<br>
+          20 ml dark rum<br>
+          30 ml pumpkin syrup<br>
+          40 ml cream (10–15%)
+        </div>
+      </div>
+
+      <div class="cocktail" id="creamy-pumpkin-cordial">
+        <h3>Creamy Pumpkin Cordial</h3>
+        <p class="taste">Silky • Sweet • Autumn dessert</p>
+        <div class="ingredients">
+          30 ml white rum or salted caramel vodka<br>
+          40 ml cream (10–15%)<br>
+          25 ml pumpkin syrup
+        </div>
+      </div>
+
+      <div class="cocktail" id="autumn-orchard-tea">
+        <h3>Autumn Orchard Tea</h3>
+        <p class="taste">Fresh • Apple crisp • Tea warm</p>
+        <div class="ingredients">
+          40 ml gin<br>
+          40 ml apple juice<br>
+          30 ml chilled black tea<br>
+          15 ml cinnamon syrup
+        </div>
+      </div>
+
+      <div class="cocktail" id="spiced-rum-old-fashioned">
+        <h3>Spiced Rum Old Fashioned</h3>
+        <p class="taste">Deep • Warm • Sophisticated</p>
+        <div class="ingredients">
+          45 ml aged rum<br>
+          10 ml pumpkin syrup<br>
+          2 dashes Angostura
+        </div>
+      </div>
+
+      <div class="cocktail" id="caramel-apple-mule">
+        <h3>Caramel Apple Mule</h3>
+        <p class="taste">Bubbly • Caramel kick • Autumn party</p>
+        <div class="ingredients">
+          60 ml caramel vodka<br>
+          60 ml apple cider<br>
+          120 ml ginger beer<br>
+          15 ml lime juice
+        </div>
+      </div>
+
+      <div class="cocktail" id="apple-cider-margarita">
+        <h3>Apple Cider Margarita</h3>
+        <p class="taste">Tangy • Cinnamon rim • Fiesta fall</p>
+        <div class="ingredients">
+          60 ml tequila<br>
+          30 ml triple sec<br>
+          60 ml apple cider<br>
+          30 ml lime juice
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="scrollToTop()" class="btn-up" id="btnUp">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+      <path d="M12 19V5m-7 7l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <script>
+    window.addEventListener('load', () => {
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            target.classList.add('highlight');
+            setTimeout(() => target.classList.remove('highlight'), 5000);
+          }, 400);
+        }
+      }
+    });
+    window.onscroll = () => {
+      const btn = document.getElementById('btnUp');
+      btn.style.opacity = document.documentElement.scrollTop > 300 ? '1' : '0';
+      btn.style.visibility = document.documentElement.scrollTop > 300 ? 'visible' : 'hidden';
+    };
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  </script>
+</body>
+</html>
