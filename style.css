@@ -12,7 +12,7 @@ body {
 
 /* === ГЛАВНАЯ === */
 .home {
-  background: url('../bg-pumpkins.jpg') center/cover no-repeat fixed;
+  background: url('bg-pumpkins.jpg') center/cover no-repeat fixed;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -176,3 +176,4 @@ body {
   transform: scale(1.2);
 
 }
+
