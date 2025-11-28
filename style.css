@@ -1,6 +1,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:wght@500;700&display=swap');
+/* Подключаем все нужные шрифты сразу */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:wght@400;600;700&family=Prata&display=swap');
 
 body {
   font-family: 'Playfair Display', serif;
@@ -10,7 +11,7 @@ body {
   line-height: 1.7;
 }
 
-/* === ГЛАВНАЯ === */
+/* ===================== ГЛАВНАЯ СТРАНИЦА ===================== */
 .home {
   background: url('bg-pumpkins.jpg') center/cover no-repeat fixed;
   min-height: 100vh;
@@ -49,21 +50,25 @@ body {
   opacity: 0.9;
 }
 
-.buttons { display: flex; flex-direction: column; gap: 14px; }
+.buttons { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 14px; 
+}
 
 .btn {
-  font-family: 'Playfair Display', serif;     /* ← теперь другой шрифт, идеально сочетается */
+  font-family: 'Playfair Display', serif;
   font-weight: 600;
-  display: block;
-  padding: 10px 16px;
-  border-radius: 14px;
-  background: transparent;
-  color: #e9c46a;
   font-size: 12px;
-  text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
+  color: #e9c46a;
+  background: transparent;
   border: 1px solid #e9c46a;
+  padding: 10px 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  display: block;
   transition: all 0.4s ease;
 }
 
@@ -74,13 +79,13 @@ body {
   transform: translateY(-2px);
 }
 
-/* === КОКТЕЙЛИ === */
+/* ===================== СТРАНИЦА КОКТЕЙЛЕЙ ===================== */
 .cocktails-page { background: #0a0502; }
 
-.container {
-  padding: 100px 20px 140px;
-  max-width: 420px;
-  margin: 0 auto;
+.container { 
+  padding: 100px 20px 140px; 
+  max-width: 420px; 
+  margin: 0 auto; 
 }
 
 .header h1 {
@@ -92,88 +97,77 @@ body {
   letter-spacing: 3px;
 }
 
-.cocktail-list { gap: 52px; display: flex; flex-direction: column; }
+.cocktail-list { 
+  gap: 56px; 
+  display: flex; 
+  flex-direction: column; 
+}
 
 .cocktail {
   width: 300px;
   margin: 0 auto;
-  padding: 42px 34px;
+  padding: 48px 36px;
   background: rgba(12,6,3,0.98);
-  position: relative;
   text-align: center;
-  /* ЕЩЁ ТОНЬШЕ — почти призрачная рамочка */
   border: 2px solid transparent;
-  border-image: linear-gradient(45deg, 
-    transparent 10%, 
-    #f4a261 35%, 
-    #e9c46a 50%, 
-    #f4a261 65%, 
-    transparent 90%) 8;
+  border-image: linear-gradient(45deg, transparent 10%, #f4a261 35%, #e9c46a 50%, #f4a261 65%, transparent 90%) 8;
   border-image-slice: 8;
 }
 
+/* Название коктейля */
 .cocktail h3 {
-  font-family: 'Playfair Display', serif;   /* ← теперь подзаголовки, не кричащие */
-  font-size: 19px;                         /* значительно меньше */
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
+  font-size: 23px;
   color: #f4a261;
-  margin-bottom: 8px;
-  letter-spacing: 1.4px;
+  margin-bottom: 14px;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
+  line-height: 1.1;
 }
 
+/* Описание — большие красивые отступы */
 .cocktail .taste {
-  font-size: 14px;
+  font-family: 'Playfair Display', serif;
   font-style: italic;
+  font-weight: 400;
+  font-size: 15.5px;
   color: #e9c46a;
-  margin: 12px 0 26px;
+  margin: 22px 0 34px;
+  letter-spacing: 0.8px;
+  opacity: 0.95;
+}
+
+/* Ингредиенты — только Prata */
+.cocktail .ingredients {
+  font-family: 'Prata', serif;
+  font-size: 17.8px;
+  font-weight: 400;
+  line-height: 2.35;
+  color: #f4e4d3;
   letter-spacing: 0.6px;
 }
 
-.cocktail .ingredients {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 2.1;
-  color: #f4e4d3;
-  letter-spacing: 0.5px;
+/* Подсветка и кнопки */
+.highlight { animation: soft-glow 4s ease-in-out; }
+@keyframes soft-glow { 
+  0%,100% { box-shadow: 0 0 25px rgba(244,162,97,0.35); } 
+  50% { box-shadow: 0 0 65px rgba(244,162,97,0.8); } 
 }
 
-/* Подсветка рандомного */
-.highlight {
-  animation: soft-glow 4s ease-in-out;
-}
-@keyframes soft-glow {
-  0%,100% { box-shadow: 0 0 25px rgba(244,162,97,0.35); }
-  50%     { box-shadow: 0 0 60px rgba(244,162,97,0.75); }
-}
-
-/* Кнопки назад/вверх — красивые и рабочие */
 .btn-back, .btn-up {
   position: fixed;
-  width: 46px;
-  height: 46px;
+  width: 46px; height: 46px;
   background: rgba(12,6,3,0.96);
   border: 1px solid #f4a261;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   color: #f4a261;
   z-index: 1000;
   backdrop-filter: blur(12px);
   box-shadow: 0 0 18px rgba(244,162,97,0.3);
   transition: all 0.4s ease;
 }
-
 .btn-back { top: 18px; left: 18px; }
-.btn-up   { bottom: 28px; right: 18px; opacity: 0; visibility: hidden; }
-
-.btn-back:hover, .btn-up:hover {
-  background: #f4a261;
-  color: #000;
-  box-shadow: 0 0 40px rgba(244,162,97,0.8);
-  transform: scale(1.2);
-
-}
-
+.btn-up { bottom: 28px; right: 18px; opacity: 0; visibility: hidden; }
+.btn-back:hover, .btn-up:hover { background: #f4a261; color: #000; box-shadow: 0 0 40px rgba(244,162,97,0.8); transform: scale(1.2); }
